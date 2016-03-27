@@ -36,7 +36,7 @@ let g:SimpylFold_docstring_preview=1
 " PEP8 Code Styling
 au BufNewFile,BufRead *.py
     \ set tabstop=4
-    \ set softtabstop=4
+"    \ set softtabstop=4
     \ set shiftwidth=4
     \ set textwidth=79
     \ set expandtab
@@ -53,6 +53,9 @@ au BufNewFile,BufRead *.js, *.html, *.css
 Plugin 'vim-scripts/indentpython.vim'
 
 " Flag unnecessary whitespace
+"
+" This line causes and error
+highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " UTF8 Supports
@@ -121,3 +124,4 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 
 
+let g:ycm_filetype_whitelist = { 'cpp': 1, 'c': 1, 'python':1 }
