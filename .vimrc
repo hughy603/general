@@ -36,6 +36,7 @@ let g:SimpylFold_docstring_preview=1
 " PEP8 Code Styling
 au BufNewFile,BufRead *.py
     \ set tabstop=4
+" The following line causes an error
 "    \ set softtabstop=4
     \ set shiftwidth=4
     \ set textwidth=79
@@ -54,7 +55,8 @@ Plugin 'vim-scripts/indentpython.vim'
 
 " Flag unnecessary whitespace
 "
-" This line causes and error
+" The highlight line was not in the tutorial. It is needed for the au line to
+" work
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
