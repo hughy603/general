@@ -33,22 +33,25 @@ nnoremap <space> za
 Plugin 'tmhedberg/SimpylFold'
 let g:SimpylFold_docstring_preview=1
 
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 " PEP8 Code Styling
 au BufNewFile,BufRead *.py
-    \ set tabstop=4
-" The following line causes an error
-"    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
+    \ set tabstop=4		|
+    \ set softtabstop=4		|
+    \ set shiftwidth=4		|
+    \ set textwidth=79		|
+    \ set expandtab		|
+    \ set autoindent		|
     \ set fileformat=unix
 
 " Full stack development Styling
 au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
+    \ set tabstop=1		|
+    \ set softtabstop=1		|
+    \ set shiftwidth=1		|
+    \ set expandtab
 
 " PEP8 Auto indentation 
 Plugin 'vim-scripts/indentpython.vim'
@@ -66,7 +69,7 @@ set encoding=utf-8
 " Auto Complete
 " Installation instructions below
 " sudo apt-get install build-essential cmake
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 " The former line ensures that the autocomplete window goes away when you’re
 " done with it, and the latter defines a shortcut for goto definition.
 "
