@@ -53,6 +53,16 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ set shiftwidth=1		|
     \ set expandtab
 
+" AWS Yaml config files
+au BufNewFile,BufRead *.config
+    \ set tabstop=4		|
+    \ set softtabstop=4		|
+    \ set shiftwidth=4		|
+    \ set textwidth=79		|
+    \ set expandtab		|
+    \ set autoindent		|
+    \ set fileformat=unix
+
 " PEP8 Auto indentation 
 Plugin 'vim-scripts/indentpython.vim'
 
@@ -77,16 +87,6 @@ set encoding=utf-8
 " whatever I’m currently on. Helpful when exploring new code.
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
-"python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
 
 " Syntax highlighting
 Plugin 'scrooloose/syntastic'
@@ -113,9 +113,6 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 " Searching: Ctrl-P will enable the search
 Plugin 'kien/ctrlp.vim'
-
-" Line numbering
-set nu
 
 " Git integration: Disabled
 " Example is at
